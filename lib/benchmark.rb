@@ -1,5 +1,8 @@
-# Benchmark for different Difficulties
-
+################################################################################
+#   Benchmark for different Difficulties
+#   
+#   To run it in irb:   > load './benchmark.rb'
+###############################################################################
 require 'benchmark'
 require 'digest'
 
@@ -18,7 +21,4 @@ def proof_of_work difficulty, nonce=0
   proof
 end
 
-#proof_of_work 1   # => nonce: 3:  0b4fd69a8d7a3f7e2694489dcb1afbfb2b94a7693b4b142d99d76dd821e543a0
-
-proof_of_work 2   # => nonce: 3107:  000986c8511feaf74a9cb6aa96f491943386ebb0af145aa20eb81c86f1cd94e8
-
+puts Benchmark.measure { proof_of_work 2 }
